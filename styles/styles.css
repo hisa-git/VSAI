@@ -18,13 +18,14 @@ h1 {
 }
 .hero-block {
   width: 92vw;
-  height: 50vh;
+  height: 56vh;
   margin: 0 auto;
   background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
   border-radius: 24px;
   padding-top: 2em;
   padding-left: 2vw;
   padding-right: 2vw;
+  position: relative;
 }
 .hero-block p {
   margin-top: 0.5em;
@@ -36,6 +37,7 @@ header {
   display: flex;
   height: 8vh;
   align-items: center;
+  margin-bottom: 2vh;
 }
 .header-center {
   display: flex;
@@ -73,9 +75,14 @@ header {
   margin-right: 4vw;
   align-content: center;
 }
-/*.try-ai img {
+.use-ai {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-right: 1vw;
+}
+.try-ai img {
   width: 0.8em;
-}*/
+}
 
 .logo {
   margin-left: 4vw;
@@ -85,10 +92,53 @@ header {
   width: 38vw;
   padding: 1em;
   border-radius: 16px;
+  margin-top: 4vh;
 }
 .share-this-site p:last-of-type {
   color: #797979;
 }
 .anime-img {
+  float: right;
+  margin-right: 4vw;
+  display: block;
+  position: absolute;
+  top: 18vh;
+  width: 22vw;
+  right: 0;
+}
+.site-idea-btn {
+  border: #000000 2px solid;
+  background-color: #00000000;
+  color: rgb(0, 0, 0);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border-radius: 9999px;
   margin-left: auto;
+  margin-right: 4vw;
+  align-content: center;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.copy-link-btn {
+  display: flex;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 1em;
+  border-radius: 16px;
+  border: none;
+  align-items: center;
+}
+
+.share-container {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1vw;
+}
+.share-container img {
+  width: 1.5vw;
+}
+
+.chat-main-grid {
+  grid-template-columns: 1fr 4fr;
 }
