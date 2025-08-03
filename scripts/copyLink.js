@@ -3,30 +3,21 @@ const notyf = new Notyf({
   position: { x: "right", y: "top" },
 });
 
-function copyTextFromElement(selector) {
-  const element = document.querySelector(selector);
-  if (!element) {
-    notyf.error("Элемент не найден");
-    return;
-  }
-
-  const text = element.innerText || element.value;
-
+function copyCurrentURL() {
+  const url = window.location.href;
   navigator.clipboard
-    .writeText(text)
+    .writeText(url)
     .then(() => {
+      console.log("скопійовано:", url);
       notyf.success("Скопійовано у буфер обміну");
     })
-    .catch(() => {
+    .catch((err) => {
+      console.error("помилка копіювання:", err);
       notyf.error("Помилка копіювання");
     });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const copyBtn = document.querySelector("#copy-btn");
-  if (copyBtn) {
-    copyBtn.addEventListener("click", () =>
-      copyTextFromElement("#copy-target")
-    );
-  }
+  const copyBtn = document.querySelector(".copy-link-btn");
+  copyBtn.addEventListener("click", copyCurrentURL);
 });
