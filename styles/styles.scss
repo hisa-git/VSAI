@@ -3,12 +3,22 @@
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
   font-family: "Sansation", "sans-serif";
+=======
+  font-family: "Sansation", "Montserrat";
+>>>>>>> a9744710b53876c7aebe72c10f673ecbe3b96c64
 }
 a:hover,
 button:hover {
   cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+a {
+  text-decoration: none;
+}
+>>>>>>> a9744710b53876c7aebe72c10f673ecbe3b96c64
 h1 {
   font-style: normal;
   font-weight: 400;
@@ -95,6 +105,17 @@ header {
   border-radius: 16px;
   margin-top: 4vh;
 }
+<<<<<<< HEAD
+=======
+@media (max-width: 1000px) {
+  .share-this-site {
+    width: 50vw;
+  }
+  .hero-block p {
+    width: 50vw;
+  }
+}
+>>>>>>> a9744710b53876c7aebe72c10f673ecbe3b96c64
 .share-this-site p:last-of-type {
   color: #797979;
 }
@@ -106,6 +127,12 @@ header {
   top: 18vh;
   width: 22vw;
   right: 0;
+<<<<<<< HEAD
+=======
+  @media (max-width: 1000px) {
+    display: none;
+  }
+>>>>>>> a9744710b53876c7aebe72c10f673ecbe3b96c64
 }
 .site-idea-btn {
   border: #000000 2px solid;
@@ -149,9 +176,19 @@ header {
   margin-top: 16vh;
 }
 .reasons-to-use-ai h2 {
+<<<<<<< HEAD
   width: 40vw;
   font-weight: 500;
   font-size: 3em;
+=======
+  margin-bottom: 8vh;
+  width: 40vw;
+  font-weight: 500;
+  font-size: 3em;
+  @media (max-width: 1000px) {
+    width: 92vw;
+  }
+>>>>>>> a9744710b53876c7aebe72c10f673ecbe3b96c64
 }
 .reasons-to-use-ai h3 {
   font-size: 2em;
@@ -176,6 +213,7 @@ hr {
   height: 5px;
   background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
 }
+<<<<<<< HEAD
 .articles-1fr-2fr{
     display: grid;
   width: 100%;
@@ -186,3 +224,230 @@ hr {
   border-radius: 24px;
   background-image: none;
 }
+=======
+
+.articles {
+  margin-top: 8vh;
+  display: grid;
+  gap: 2rem;
+  padding: 0 4vw 3rem;
+
+  &.grid-1-2 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &.grid-2-1 {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  // фиксируем высоту по самой высокой карточке
+  align-items: stretch;
+
+  .card {
+    display: flex;
+    background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
+    border-radius: 12px;
+
+    .image-wrapper {
+      //flex: 1; // растягиваем картинку на всю доступную высоту
+      position: relative;
+
+      img {
+        width: 100%;
+        //height: 100%;
+        object-fit: cover;
+      }
+
+      .shadow-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        pointer-events: none;
+      }
+    }
+
+    .card-content {
+      padding: 1rem;
+      color: rgb(0, 0, 0);
+    }
+
+    &.gradient .card-content {
+      background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
+      color: #000;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .articles {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.site-footer {
+  background: black;
+  color: white;
+  padding: 1rem 4vw !important;
+  nav {
+    margin-top: 0.5rem;
+
+    a {
+      color: white;
+      margin-right: 1.5rem;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.full-image-1 {
+  @media (max-width: 1000px) {
+    height: 30vh;
+  }
+  background-image: url("../assets/square-article-vr.png") !important;
+  background-size: contain;
+  .card-content {
+    color: white !important;
+    vertical-align: bottom;
+  }
+}
+.img-in-width-article-preview {
+  border-radius: 0 12px 12px 0;
+  width: 50%;
+  height: auto;
+  display: block;
+}
+.bottom-in-cards {
+  display: grid;
+  align-items: end;
+}
+
+//СТОРІНКА З ПРИНЦИПАМИ РОБОТИ
+
+.ai-principle {
+  //padding: 20px 40px;
+  color: #000000;
+
+  .intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #797979;
+    }
+
+    .intro-img {
+      margin-top: 20px;
+      width: 32vw;
+      border-radius: 12px;
+    }
+  }
+
+  .steps {
+    margin-top: 50px;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .steps-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .step-card {
+        background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
+        padding: 20px;
+        border-radius: 12px;
+        width: 250px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+
+        img {
+          height: 60px;
+          margin-bottom: 15px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: #000000;
+          font-size: 0.95rem;
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+
+  .diagram {
+    text-align: center;
+    margin-top: 50px;
+
+    .diagram-img {
+      max-width: 700px;
+      width: 100%;
+      border-radius: 8px;
+      background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
+      padding: 10px;
+    }
+  }
+
+  .examples {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+
+      li {
+        background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #000000;
+        transition: background 0.2s ease;
+
+        &:hover {
+          box-sizing: border-box;
+          background: #ffffff;
+          //border: #797979 2px solid;
+        }
+      }
+    }
+  }
+}
+.gradient-text {
+  background: linear-gradient(90.1deg, #f3c6fa 0.09%, #a0daff 99.91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Для Firefox */
+}
+>>>>>>> a9744710b53876c7aebe72c10f673ecbe3b96c64

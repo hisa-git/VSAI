@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VSAI - Very Simple Artifical Intellegence</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <!--Підключення стилів для бібліотеки notyf.js-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="../assets/logo.png" alt="logo" class="logo" />
+      <div class="header-center">
+        <a>Головна</a>
+        <a class="selected-header">Принцип роботи</a>
+        <a>Вiкi</a>
+        <a>Новини</a>
+      </div>
+      <button class="try-ai">
+        <a>Спробувати ШI</a>
+        <img alt="arrow" src="../assets/link2.svg" />
+      </button>
+    </header>
+    <main class="ai-principle">
+      <section class="intro">
+        <h1>
+          Принцип роботи
+          <span class="gradient-text">штучного інтелекту</span>
+        </h1>
+        <p>
+          Штучний інтелект (ШІ) — це система, яка може аналізувати дані, вчитися
+          на прикладах та приймати рішення. Ви взаємодієте з ним щодня — від
+          рекомендацій у соцмережах до голосових помічників.
+        </p>
+        <img
+          src="../assets/chat-ai.svg"
+          alt="AI Illustration"
+          class="intro-img"
+        />
+      </section>
+
+      <section class="steps">
+        <h2>Етапи роботи ШІ</h2>
+        <div class="steps-container">
+          <div
+            class="step-card"
+            data-tip="Дані збираються з різних джерел: сенсори, інтернет, камери"
+          >
+            <img src="../assets/ai-data.svg" alt="Data" />
+            <h3>1. Збір даних</h3>
+            <p>Отримання інформації для подальшої обробки.</p>
+          </div>
+          <div
+            class="step-card"
+            data-tip="Дані очищуються від шуму, виправляються помилки"
+          >
+            <img src="../assets/data-exraction.svg" alt="Preprocessing" />
+            <h3>2. Попередня обробка</h3>
+            <p>Підготовка даних для навчання моделі.</p>
+          </div>
+          <div
+            class="step-card"
+            data-tip="Модель вчиться знаходити закономірності у даних"
+          >
+            <img src="../assets/ai-training.svg" alt="Training" />
+            <h3>3. Навчання</h3>
+            <p>Створення алгоритму, що розпізнає патерни.</p>
+          </div>
+          <div
+            class="step-card"
+            data-tip="Модель робить передбачення або приймає рішення"
+          >
+            <img src="../assets/ai-using.svg" alt="Prediction" />
+            <h3>4. Використання</h3>
+            <p>Робота ШІ у реальних задачах.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="diagram">
+        <h2>Спрощена схема роботи</h2>
+        <img src="../assets/scheme.png" alt="AI Diagram" class="diagram-img" />
+      </section>
+
+      <section class="examples">
+        <h2>Приклади застосування</h2>
+        <ul>
+          <li>Рекомендації відео та музики</li>
+          <li>Переклад тексту в реальному часі</li>
+          <li>Медична діагностика за знімками</li>
+          <li>Розпізнавання облич та об'єктів</li>
+        </ul>
+      </section>
+      <footer class="site-footer">
+        <p>Зроблено командою №3 під час роботи на платформі Logika</p>
+        <nav>
+          <a href="https://github.com/hisa-git/VSAI">GitHub</a>
+          <a href="https://logikaschool.com/">Logika</a>
+          <a href="./pages/autors.html">Автори</a>
+          <a href="https://storyset.com/online"
+            >Online illustrations by Storyset</a
+          >
+        </nav>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let retries = 0;
+        const MAX_RETRIES = 100; // ~5s при 50ms интервале
+
+        function initNotyf() {
+          const notyf = new Notyf({
+            duration: 3000,
+            position: { x: "right", y: "top" },
+          });
+
+          // Делегирование кликов — надёжнее, если карточки динамические
+          const container =
+            document.querySelector(".steps-container") || document;
+          container.addEventListener("click", (e) => {
+            const card = e.target.closest(".step-card");
+            if (!card) return;
+            const tip =
+              card.dataset.tip ||
+              card.getAttribute("data-tip") ||
+              "Детальної підказки немає";
+            notyf.success(tip);
+          });
+
+          // Делаем карточки доступными с клавиатуры и визуально кликабельными
+          document.querySelectorAll(".step-card").forEach((card) => {
+            card.setAttribute("tabindex", "0");
+            card.setAttribute("role", "button");
+            card.style.cursor = "pointer";
+            card.addEventListener("keydown", (ev) => {
+              if (ev.key === "Enter" || ev.key === " ") {
+                ev.preventDefault();
+                card.click();
+              }
+            });
+          });
+
+          console.log(
+            "Notyf и обработчики инициализированы. Карточек найдено:",
+            document.querySelectorAll(".step-card").length
+          );
+        }
+
+        initNotyf();
+      });
+    </script>
+  </body>
+</html>
